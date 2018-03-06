@@ -128,19 +128,19 @@ enum { DVORAK, NUMPAD, FUNCTION }; // layers
 const Key keymaps[][ROWS][COLS] PROGMEM = {
 
 [DVORAK] = KEYMAP_STACKED
-  (___,          Key_1,         Key_2,     Key_3,      Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick, Key_Quote,     Key_Comma, Key_Period, Key_P, Key_Y, Key_Tab,
+  (___,          Key_1,         Key_2,     Key_3,      Key_4, Key_5, Key_Escape,
+   Key_Backtick, Key_Quote,     Key_Comma, Key_Period, Key_P, Key_Y, Key_LeftBracket,
    Key_PageUp,   Key_A,         Key_O,     Key_E,      Key_U, Key_I,
-   Key_PageDown, Key_Semicolon, Key_Q,     Key_J,      Key_K, Key_X, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
+   Key_PageDown, Key_Semicolon, Key_Q,     Key_J,      Key_K, Key_X, Key_Home,
+   Key_LeftAlt,  Key_Backspace, Key_LeftShift, Key_LeftGui,
    ShiftToLayer(FUNCTION),
 
-   M(MACRO_ANY),   Key_6, Key_7, Key_8, Key_9, Key_0, Key_KeypadNumLock,
-   Key_Enter,      Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
-                   Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
-   Key_RightAlt,   Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
-   ShiftToLayer(FUNCTION)),
+   M(MACRO_ANY),     Key_6, Key_7, Key_8, Key_9, Key_0, Key_KeypadNumLock,
+   Key_RightBracket, Key_F, Key_G, Key_C, Key_R, Key_L, Key_Slash,
+                     Key_D, Key_H, Key_T, Key_N, Key_S, Key_Minus,
+   Key_End,          Key_B, Key_M, Key_W, Key_V, Key_Z, Key_Equals,
+   Key_RightGui, Key_RightShift, Key_Spacebar, Key_RightControl,
+   ___),
 
 
   [NUMPAD] =  KEYMAP_STACKED
@@ -159,17 +159,17 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
    ___),
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___,      Key_F1,           Key_F2,      Key_F3,     Key_F4,        Key_F5,           XXX,
-   Key_Tab,  ___,              Key_mouseUp, ___,        Key_mouseBtnR, Key_mouseWarpEnd, Key_mouseWarpNE,
-   Key_Home, Key_mouseL,       Key_mouseDn, Key_mouseR, Key_mouseBtnL, Key_mouseWarpNW,
-   Key_End,  Key_PrintScreen,  Key_Insert,  ___,        Key_mouseBtnM, Key_mouseWarpSW,  Key_mouseWarpSE,
+  (___,      Key_F1,           Key_F2,      Key_F3,      Key_F4,        Key_F5,           Key_LEDEffectNext,
+   Key_Tab,  ___,              ___,         Key_mouseUp, Key_mouseBtnL, Key_mouseWarpEnd, LSHIFT(Key_9),
+   Key_Home, Key_mouseL,       Key_mouseDn, Key_mouseR,  Key_mouseBtnL, Key_mouseWarpNW,
+   Key_End,  Key_PrintScreen,  Key_Insert,  ___,         Key_mouseBtnR, Key_mouseWarpSW,  Key_PageUp,
    ___, Key_Delete, ___, ___,
    ___,
 
-   Consumer_ScanPreviousTrack, Key_F6,                 Key_F7,                   Key_F8,                   Key_F9,          Key_F10,          Key_F11,
-   Consumer_PlaySlashPause,    Consumer_ScanNextTrack, Key_LeftCurlyBracket,     Key_RightCurlyBracket,    Key_LeftBracket, Key_RightBracket, Key_F12,
-                               Key_LeftArrow,          Key_DownArrow,            Key_UpArrow,              Key_RightArrow,  ___,              ___,
-   Key_PcApplication,          Consumer_Mute,          Consumer_VolumeDecrement, Consumer_VolumeIncrement, ___,             Key_Backslash,    Key_Pipe,
+   Consumer_ScanPreviousTrack, Key_F6,                  Key_F7,                   Key_F8,                   Key_F9,          Key_F10,          Key_F11,
+   LSHIFT(Key_0),              Consumer_ScanNextTrack,  ___,                      Key_UpArrow,              ___,             ___,              Key_F12,
+                               Consumer_PlaySlashPause, Key_LeftArrow,            Key_DownArrow,            Key_RightArrow,  ___,              ___,
+   Key_PageDown,               Consumer_Mute,           Consumer_VolumeDecrement, Consumer_VolumeIncrement, ___,             Key_Backslash,    Key_Pipe,
    ___, ___, Key_Enter, ___,
    ___)
 
