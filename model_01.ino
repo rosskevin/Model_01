@@ -56,6 +56,9 @@
 // Support for Keyboardio's internal keyboard testing mode
 #include "Kaleidoscope-Model01-TestMode.h"
 
+// Custom plugins
+#include <Kaleidoscope.h>
+#include <Kaleidoscope-TopsyTurvy.h>
 
 /** This 'enum' is a list of all the macros used by the Model 01's firmware
   * The names aren't particularly important. What is important is that each
@@ -128,11 +131,11 @@ enum { DVORAK, NUMPAD, FUNCTION }; // layers
 const Key keymaps[][ROWS][COLS] PROGMEM = {
 
 [DVORAK] = KEYMAP_STACKED
-  (___,          Key_1,         Key_2,     Key_3,      Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick, Key_Quote,     Key_Comma, Key_Period, Key_P, Key_Y, Key_LeftBracket,
-   Key_Tab,      Key_A,         Key_O,     Key_E,      Key_U, Key_I,
-   Key_Escape,   Key_Semicolon, Key_Q,     Key_J,      Key_K, Key_X, Key_Home,
-   Key_LeftAlt,  Key_Backspace, Key_LeftShift, Key_LeftGui,
+  (___,          Key_1,                Key_2,         Key_3,      Key_4, Key_5, Key_LEDEffectNext,
+   Key_Backtick, Key_Quote,            Key_Comma,     Key_Period, Key_P, Key_Y, Key_LeftBracket,
+   Key_Tab,      Key_A,                Key_O,         Key_E,      Key_U, Key_I,
+   Key_Escape,   Key_Semicolon,        Key_Q,         Key_J,      Key_K, Key_X, Key_Home,
+   Key_LeftAlt,  Key_Backspace,        Key_LeftShift, Key_LeftGui,
    ShiftToLayer(FUNCTION),
 
    M(MACRO_ANY),     Key_6, Key_7, Key_8, Key_9, Key_0, Key_KeypadNumLock,
@@ -309,7 +312,10 @@ void setup() {
     &Macros,
 
     // The MouseKeys plugin lets you add keys to your keymap which move the mouse.
-    &MouseKeys
+    &MouseKeys,
+
+    // Custom plugins
+    &TopsyTurvy
   );
 
   // While we hope to improve this in the future, the NumPad plugin
