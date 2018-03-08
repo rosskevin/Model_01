@@ -128,10 +128,10 @@ enum { DVORAK, NUMPAD, FUNCTION }; // layers
 const Key keymaps[][ROWS][COLS] PROGMEM = {
 
 [DVORAK] = KEYMAP_STACKED
-  (___,          Key_1,         Key_2,     Key_3,      Key_4, Key_5, Key_Escape,
+  (___,          Key_1,         Key_2,     Key_3,      Key_4, Key_5, Key_LEDEffectNext,
    Key_Tab,      Key_Quote,     Key_Comma, Key_Period, Key_P, Key_Y, Key_LeftBracket,
    Key_Backtick, Key_A,         Key_O,     Key_E,      Key_U, Key_I,
-   ___,          Key_Semicolon, Key_Q,     Key_J,      Key_K, Key_X, Key_Home,
+   Key_Escape,   Key_Semicolon, Key_Q,     Key_J,      Key_K, Key_X, Key_Home,
    Key_LeftAlt,  Key_Backspace, Key_LeftShift, Key_LeftGui,
    ShiftToLayer(FUNCTION),
 
@@ -159,7 +159,7 @@ const Key keymaps[][ROWS][COLS] PROGMEM = {
    ___),
 
   [FUNCTION] =  KEYMAP_STACKED
-  (___,      Key_F1,           Key_F2,      Key_F3,      Key_F4,        Key_F5,           Key_LEDEffectNext,
+  (___,      Key_F1,           Key_F2,      Key_F3,      Key_F4,        Key_F5,           ___,
    Key_Tab,  ___,              ___,         Key_mouseUp, Key_mouseBtnL, Key_mouseWarpEnd, LSHIFT(Key_9),
    Key_Home, Key_mouseL,       Key_mouseDn, Key_mouseR,  Key_mouseBtnL, Key_mouseWarpNW,
    Key_End,  Key_PrintScreen,  Key_Insert,  ___,         Key_mouseBtnR, Key_mouseWarpSW,  Key_PageUp,
